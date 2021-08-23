@@ -8,7 +8,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  my2c2psdk: "^0.0.1"
+  my2c2psdk: ^0.0.1
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ req.securityCode = "123";
 final result = await My2c2pSDK.proceed(req);
 ```
 
-`result` Should be return response from My2c2pSDK
+`result` Should be return response from My2c2pSDK in JSON format.
 
 For more sample and information please see 
 [iOS](https://s.2c2p.com/manuals/ios/request_nonui/newpayment.html),
