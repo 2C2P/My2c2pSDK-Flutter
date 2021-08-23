@@ -23,7 +23,7 @@ import 'package:my2c2psdk/my2c2psdk.dart';
 Use the My2c2pSDK with your information like this:
 
 ```dart
-final req = My2c2pSDK(
+final req = My2c2pSDKRequest(
   privateKey: 'Your private key',
 );
 req.merchantId = "JT01";
@@ -42,7 +42,7 @@ req.paymentUI = false;
 //set optional fields
 req.securityCode = "123";
 
-final result = await My2c2pSDKPlugin.proceed(req);
+final result = await My2c2pSDK.proceed(req);
 ```
 
 `result` Should be return response from My2c2pSDK
