@@ -1,0 +1,6 @@
+framework module PGW {
+  umbrella header "PGW.h"
+
+  export *
+  module * { export * }
+}

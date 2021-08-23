@@ -1,0 +1,57 @@
+group 'com.ccpp.my2c2psdk'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+            dirs project(':my2c2psdk').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    defaultConfig {
+        minSdkVersion 23
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /// ** Important ** Need to add this line before run.
+    api 'androidx.appcompat:appcompat:1.3.1'
+    api "androidx.appcompat:appcompat-resources:1.3.1"
+
+    //PGW SDK dependencies
+    api "com.google.code.gson:gson:2.8.5"
+    api "com.squareup.okhttp3:okhttp:4.4.0" //<= 3.12.6 for 4.4 Android OS / >= 4.x.x for 5.0+ Android OS.
+    api "com.squareup.okio:okio:2.4.3"
+    api "com.squareup.picasso:picasso:2.71828"
+
+    api(name:'alipaySdk-15.6.8-20191021122455-noUtdid', ext:'aar')
+    api(name:'PGW_SDK_ANDROID_v3.10.2', ext:'aar')
+}
