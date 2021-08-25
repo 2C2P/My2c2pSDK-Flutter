@@ -1,7 +1,7 @@
 name: my2c2psdk
 description: My2c2pSDK for Flutter.
 version: 0.0.2
-homepage: https://github.com/nonthawatt-pho/My2c2pSDK-Flutter
+homepage: https://github.com/2C2P/My2c2pSDK-Flutter
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
