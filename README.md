@@ -1,6 +1,6 @@
 # My2c2pSDK for Flutter
 
-[![pub package](https://img.shields.io/pub/v/my2c2psdk)](https://pub.dev/packages/http)
+[![pub package](https://img.shields.io/pub/v/my2c2psdk)](https://img.shields.io/pub/v/my2c2psdk)
 [![Platforms](https://img.shields.io/badge/Platforms-Android-green?style=flat-square)](https://img.shields.io/badge/Platforms-iOS-Green?style=flat-square)
 [![Platforms](https://img.shields.io/badge/Platforms-iOS-orange?style=flat-square)](https://img.shields.io/badge/Platforms-iOS-Green?style=flat-square)
 [![Language](https://img.shields.io/badge/Language-Dart-blue?style=flat-square)](https://img.shields.io/badge/Platforms-iOS-Green?style=flat-square)
@@ -11,7 +11,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  my2c2psdk: ^0.0.2
+  my2c2psdk: ^0.0.4
 ```
 
 ## System Requirements
@@ -56,7 +56,7 @@ sdk.securityCode = "123";
 final result = await sdk.proceed();
 ```
 
-`result` Should be return response from My2c2pSDK in JSON format.
+`result` Should be return response from My2c2pSDK in JSON format and can parse to My2c2pSDKResponse class.
 
 For more sample and information please see
 [iOS](https://s.2c2p.com/manuals/ios/request_nonui/newpayment.html),
@@ -64,6 +64,7 @@ For more sample and information please see
 
 
 ## Proguard for Android
+
 Please add following config into your proguard config file.
 
 ```text
@@ -136,6 +137,28 @@ Please add following config into your proguard config file.
 ```
 
 For more information click [here](https://s.2c2p.com/manuals/android/index.html)
+
+## App Scheme Declaration for iOS (OPTIONAL)
+
+**Note : Scheme required for 123 payment : eNETS (Direct Debit/Web Payment)**
+
+If you want to use eNETS, please add the scheme as following.
+- Go to **Target > Select Product > Info > URL Types**
+- Add `my2c2p[your merchant ID]` in URL Schemes. If your merchant ID is **JT01** , it will be like following.
+
+![](https://s.2c2p.com/manuals/ios/images/urlscheme.png)
+
+If user want to make payment via Bank (Direct Debit), it will open the Safair instead on in app webview. Without Scheme , safari cannot reopen the app after finish payment.
+
+**Note : Scheme required for `Alipay`**
+
+If you want to use Alipay, please add the scheme as following.
+- Go to **Target > Select Product > Info > URL Types**
+- Add ***my2c2pAlipay*** in URL Schemes. It will be like following.
+
+![](https://s.2c2p.com/manuals/ios/images/alipayscheme.png)
+
+For more information click [here](https://s.2c2p.com/manuals/ios/setupsdk.html)
 
 ## Contributing
 2C2P
