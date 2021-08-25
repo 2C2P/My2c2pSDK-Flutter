@@ -21,7 +21,7 @@ The SDK has been developed using `Dart version >=2.12.0`, `iOS Deployment Target
 | Platform | Minimum Version |
 | :-----: | :-----: |
 | iOS | 12.0 |
-| Android | 6<br/>(API Level 23) | 
+| Android | 6 (API Level 23) | 
 
 ## Usage
 
