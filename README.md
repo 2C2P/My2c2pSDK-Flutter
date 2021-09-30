@@ -11,7 +11,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  my2c2psdk: ^0.0.4
+  my2c2psdk: ^0.0.5
 ```
 
 ## System Requirements
