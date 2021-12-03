@@ -1,3 +1,6 @@
+## 0.0.6
+* [iOS] Fixed StoredCard payment.
+
 ## 0.0.5
 * Update README.md
 
